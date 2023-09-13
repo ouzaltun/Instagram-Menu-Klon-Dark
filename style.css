@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --black-color:#262626;
+    --white-color:#fafafa;
+    --open-white:#fff;
+    --right-border:#dbdbdb;
+    --white-white:#f2f2f2;
+}
+body{
+    background: var(--white-color);
+    font-family: 'Segoe UI';
+    color: #262626;
+}
+.sidebar{
+    background: var(--open-white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px;
+    height: 100%;
+    padding: 40px 10px 30px 10px;
+    border-right: 1px solid var(--right-border);
+    transition: 0.3s;
+}
+.sidebar-header{
+    width: 100%;
+    margin-bottom: 44px;
+}
+.logo-icon{
+    display:none;
+    font-size: 28px;
+    height: 35px;
+    width: 51px;
+    text-align: center;
+}
+.logo-img{
+    margin-left: 14px;
+    height: 32px;
+}
+.sidebar button{
+height: 60px;
+background: transparent;
+border: 0;
+padding: 0;
+font-family: inherit;
+cursor: pointer;
+}
+.sidebar button>span{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 24px;
+    line-height: 1px;
+}
+.sidebar button>span:hover{
+    background: var(--white-white);
+}
+
+
+.sidebar button:hover>span :is(i,img){
+    scale: 1.15;
+}
+
+.sidebar button>span>span{
+    transition: 0.3s;
+}
+.sidebar button i{
+    position: relative;
+    font-size: 28px;
+    transition: 0.2s;
+}
+.sidebar button img{
+    width: 28px;
+    height: 28px;
+    transition: 0.2s;
+}
+.sidebar button i > em{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #ff2f40;
+    position: absolute;
+    border-radius: 10px;
+    top: 2px;
+    right: -1px;
+    border: 1px solid #fff;
+    color: #f9f9f9;
+    font-size: 12px;
+    font-family: 'Segoe UI';
+}
+.sidebar button span{
+    font-size: 17px;
+}
+.sidebar>nav{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.sidebar>nav button:last-child{
+    margin-top: auto;
+}
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50%;
+    height: 40px;
+    margin-left: 15px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  .toggle2{
+    display: none;
+  }
+  input:checked + label {
+    background: var(--right-border);
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  label:active:after {
+    width: 65px;
+  }
+  @media (width < 700px){
+    .logo-img{
+        display: none;
+    }
+
+    .logo-icon{
+        display: block;
+    }
+
+    .sidebar{
+        width: 72px;
+    }
+
+    .sidebar button > span{
+        width: 50px;
+    }
+
+    .sidebar button > span > span{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .toggle3{
+        display: none;
+    }
+    .toggle3 {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: 0;
+    width: 200px;
+    padding: 20px !important;
+
+    }
+    .toggle3 label{
+    float: right;
+    }
+    .logo-icon{
+    font-size: 28px;
+    height: 35px;
+    width: 51px;
+    text-align: center;
+    font-size: 40px;
+    display: block;
+    color: var(--black-color);
+    margin-left: 7px;
+    }
+}
+/*Dark theme */
+
+body.dark {background-color: #292c35;}
+
+body.dark .sidebar{
+    background-color: #000000;
+}
+body.dark .sidebar button>span:hover{
+    background-color: #2c2a2a;
+}
+body.dark .sidebar button span{
+    color: var(--open-white);
+    
+    }
+body.dark .logo-img{
+   display: none;
+}
+body.dark .logo-icon{
+    font-size: 28px;
+    height: 35px;
+    width: 51px;
+    text-align: center;
+    font-size: 40px;
+    display: block;
+    color: var(--open-white);
+    margin-left: 8px;
+}
+
+body.dark  .sidebar{
+    border-right: 1px solid #2c2a2a;
+
+}
